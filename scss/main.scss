@@ -1,0 +1,324 @@
+@import '_variables.scss';
+@import '_resets.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    background-color: $lightBlue-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1027px;
+    min-height: 1027px;
+    margin: 75px;
+    background: $white;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 30px 45px rgba(0,0,0,.27);
+
+    // container left side
+    & .left-side{
+        position: relative;
+        padding: 45px;
+        background-color: $background-cv-left;
+        z-index: 1;
+        box-shadow: inset 0 0 18px 3px rgba(0, 0, 0, .75);
+
+        // profile text
+        & .profileText{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 23px;
+            border-bottom: 1px solid rgba(255,255,255,.27);
+
+            // imgBx
+            & .imgBx{
+                position: relative;
+                width: 195px;
+                height: 195px;
+                border-radius: 50%;
+                overflow: hidden;
+                box-shadow:  0px 0px 18px 3px rgba(0, 0, 0, .6);
+
+                // img
+                & img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            // profileText h3
+            & h3{
+                color: $white;
+                font-size: 1.5em;
+                margin-top: 23px;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 600;
+                line-height: 1.2em;
+
+                // h3 span
+                & span{
+                    font-size: .6em;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        // contactInfo
+        & .contactInfo{
+            padding-top: 42px;
+            
+            // title
+            & .title{
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: .9px;
+                margin-bottom: 23px;
+            }
+
+            // list
+            & ul{
+                position: relative;
+                & li{
+                    position: relative;
+                    margin: 12px 0;
+                    cursor: pointer;
+                    font-size: .9em;
+
+                    & span{
+                        color: $white;
+                        // icons
+                        &.icon{
+                            display: inline-block;
+                            width: 30px;
+                            color: $icon-color;
+                        }
+                        // text
+                        &.text{
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+
+            // education
+            &.education ul li {
+                margin-bottom: 15px;
+                font-weight: 500;
+                line-height: 1.5em;
+                & h5{
+                    color: $year-highlight;
+                }
+                & h4{
+                    color: $white;
+                    font-weight: 300;
+                }
+                & h3{
+                    color: $light-gray;
+                }
+            }
+
+            // language
+            &.language .percent {
+               position: relative;
+               width: 100%;
+               height: 6px;
+               background-color: $percent-bg;
+               display: block;
+               margin-top: 6px;
+               & div{
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+                   height: 100%;
+                   background-color: $percent-bg-accent;
+               }
+            }
+        }
+    }
+
+    // container right side
+    & .right-side{
+        position: relative;
+        padding: 45px;
+        background-color: $background-cv-right;
+
+        & .about{
+            margin-bottom: 45px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            & p{
+                color: $color;
+                font-size: 1em;
+                line-height: 23px;
+                font-weight: 400;
+                margin-bottom: 1em;
+                text-align: justify;
+            }
+
+            & .box{
+                display: flex;
+                // flex-direction: row;
+                margin: 23px 0;
+                & .year_company{
+                    min-width: 210px;
+                    max-width: 210px;
+                    text-transform: uppercase;
+                    color: $light-gray;
+                    font-size: 15px;
+                    & h5{
+                        font-weight: 600;
+                        margin-bottom: 3px;
+                    }
+                    & h4{
+                        font-size: .75em;
+                        font-weight: 500;
+                        line-height: 23px;
+                    }
+                }
+                & .text{
+                    margin-left: 9px;
+                    & h3{
+                        color: $year-highlight;
+                        text-transform: uppercase;
+                        font-size: 15px;
+                        margin-bottom: 3px;
+                        font-weight: 600;
+                        letter-spacing: 1.2px;
+                    }
+                    & p{
+                        color: $light-gray;
+                        font-weight: 300;
+                        line-height: 23px;
+                        font-size: .75em;
+                    }
+                }
+            }
+
+            &.skills .box{
+                position: relative;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 210px 1fr;
+                & h3{
+                    text-transform: uppercase;
+                    color: $light-gray;
+                    font-weight: 500;
+                }
+                & .percent{
+                    position: relative;
+                    width: 100%;
+                    height: 9px;
+                    margin-top: 3.6px;
+                    background-color: $light-gray;
+                    & div{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: $percent-bg-accent;
+                    }
+                }
+            }
+
+            &.brands{
+                & .brandBx{
+                    overflow: hidden;
+                    height: 45px;
+                    position: relative;
+                    background-color: $white;
+                    box-shadow: 0 10px 20px -10px rgba(255,255,255,.27);
+                    & .brandHold{
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        & img{
+                            height: 30px;
+                                filter: grayscale(100%);
+                                transition: .6s ease-in-out;
+                            &:hover{
+                                cursor: pointer;
+                                filter: drop-shadow(0 0 0.75rem rgba(0,0,0,.60));
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.interest ul{
+                display: flex;
+                justify-content: space-between;
+                & li{
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    & img{
+                        width: 23px;
+                        margin-right: 9px;
+                    }
+                }
+            }
+        }
+
+        & .secondTitle{
+            color: $background-cv-left;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+@media (max-width: 1000px)
+{
+    .container{
+        margin: 9px;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width: 600px)
+{
+    .about .box{
+        flex-direction: column;
+    }
+
+    .about .box .year_company{
+        min-width: 100%!important;
+        max-width: 100%!important;
+        margin-bottom: 6px!important;
+    }
+
+    .about .box .text{
+        margin-left: 0!important;
+    }
+
+    .about.skills .box{
+        display: block!important;
+    }
+
+    .about.skills .box > h3{
+        margin-bottom: 9px;
+    }
+}
